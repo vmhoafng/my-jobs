@@ -1,8 +1,27 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, ViewStyle, ImageStyle, TextStyle } from "react-native";
 
 import { COLORS, FONT, SIZES } from "../../../constants";
+interface stylesProps {
+  container: ViewStyle | ImageStyle | TextStyle;
+  userName: ViewStyle | ImageStyle | TextStyle;
+  welcomeMessage: ViewStyle | ImageStyle | TextStyle;
+  searchContainer: ViewStyle | ImageStyle | TextStyle;
+  searchWrapper: ViewStyle | ImageStyle | TextStyle;
+  searchInput: ViewStyle | ImageStyle | TextStyle;
+  searchBtn: ViewStyle | ImageStyle | TextStyle;
+  searchBtnImage: ViewStyle | ImageStyle | TextStyle;
+  tabsContainer: ViewStyle | ImageStyle | TextStyle;
+  tab: (
+    activeJobType: string,
+    item: string
+  ) => ViewStyle | ImageStyle | TextStyle;
+  tabText: (
+    activeJobType: string,
+    item: string
+  ) => ViewStyle | ImageStyle | TextStyle;
+}
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<stylesProps | any>({
   container: {
     width: "100%",
   },
@@ -56,14 +75,14 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: SIZES.medium,
   },
-  tab: (activeJobType, item) => ({
+  tab: (activeJobType: string, item: string) => ({
     paddingVertical: SIZES.small / 2,
     paddingHorizontal: SIZES.small,
     borderRadius: SIZES.medium,
     borderWidth: 1,
     borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
-  tabText: (activeJobType, item) => ({
+  tabText: (activeJobType: string, item: string) => ({
     fontFamily: FONT.medium,
     color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),

@@ -9,7 +9,7 @@ SplashScreen.preventAutoHideAsync();
 const Layout: React.FC = () => {
   const [fontLoaded] = useFonts({
     DMBold: require("../assets/fonts/DMSans-Bold.ttf"),
-    DMmedium: require("../assets/fonts/DMSans-medium.ttf"),
+    DMMedium: require("../assets/fonts/DMSans-Medium.ttf"),
     DMRegular: require("../assets/fonts/DMSans-Regular.ttf"),
   });
 
@@ -20,12 +20,8 @@ const Layout: React.FC = () => {
   }, [fontLoaded]);
 
   if (!fontLoaded) return null;
-
-  return (
-    <View onLayout={onLayoutRootView}>
-      <Stack />
-    </View>
-  );
+  //@ts-ignore
+  return <Stack onLayout={onLayoutRootView} />;
 };
 
 export default Layout;

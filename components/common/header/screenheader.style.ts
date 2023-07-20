@@ -1,12 +1,7 @@
 import { ImageStyle, StyleSheet } from "react-native";
 import { COLORS, SIZES } from "../../../constants";
 
-interface Styles {
-  btnContainer: ImageStyle;
-  btnImg: (dimension: string) => ImageStyle;
-}
-
-const styles: Styles = StyleSheet.create<Styles | any>({
+const styles = StyleSheet.create<any>({
   btnContainer: {
     width: 40,
     height: 40,

@@ -1,11 +1,11 @@
 import React from "react";
-import { TouchableOpacity, Image, ViewStyle, ImageStyle } from "react-native";
+import { TouchableOpacity, Image} from "react-native";
 
 import styles from "./screenheader.style";
 interface ScreenHeaderBtnProps {
   iconUrl: any;
   dimension: string;
-  handlePress: () => void;
+  handlePress?: () => void;
 }
 const ScreenHeaderBtn: React.FC<ScreenHeaderBtnProps> = ({
   iconUrl,
@@ -17,8 +17,7 @@ const ScreenHeaderBtn: React.FC<ScreenHeaderBtnProps> = ({
       <Image
         source={iconUrl}
         resizeMode="cover"
-        //ts-ignore
-        style={styles.btnImg(dimension) as ImageStyle}
+        style={styles.btnImg(dimension)}
       />
     </TouchableOpacity>
   );
